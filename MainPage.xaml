@@ -1,0 +1,23 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<!-- Licensed under the MIT License. See LICENSE in the project root for license information. -->
+
+<Page
+    x:Class="ListViewSelectionCpp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ListViewSelectionCpp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <ListView ItemsSource="{x:Bind MyList}" SelectedIndex="{x:Bind SelectedItemIndex, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:MyObject">
+                    <TextBlock Text="{x:Bind Text}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Content="Replace Selected" Click="ButtonReplace_Click"/>
+    </StackPanel>
+</Page>

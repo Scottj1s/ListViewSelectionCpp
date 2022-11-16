@@ -1,0 +1,22 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License. See LICENSE in the project root for license information.
+
+namespace ListViewSelectionCpp
+{
+    [default_interface]
+    runtimeclass MyObject
+    {
+        MyObject(Int32 Id, String Text);
+        Int32 Id;
+        String Text;
+    }
+
+    [default_interface]
+    runtimeclass MainPage : Microsoft.UI.Xaml.Controls.Page
+    {
+        MainPage();
+        Int32 SelectedItemIndex;
+        static Microsoft.UI.Xaml.DependencyProperty SelectedItemIndexProperty{ get; };
+        Windows.Foundation.Collections.IObservableVector<MyObject> MyList{ get; };
+    }
+}
